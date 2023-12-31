@@ -14,8 +14,14 @@ class ShortURLModel extends CI_Model
 		} else {
 			$string = $data['segment'];
 		}
-		$domain = trim($data['domain'], '/');
-		$string = $domain . '/' . $string;
 		return $string;
+	}
+
+	public function insert($data) : bool{
+		if($this->db->insert('app_links_data', $data)){
+			return true;
+		} else {
+			return false;
+		}
 	}
 }

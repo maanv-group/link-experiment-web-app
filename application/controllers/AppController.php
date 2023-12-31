@@ -30,22 +30,37 @@ class AppController extends CI_Controller
 	{
 		$this->load->view('bitly/home');
 	}
+	public function thank_you()
+	{
+		$this->load->view('bitly/thank-you');
+	}
+	
 
 	public function process()
 	{
 		$formdata = $this->input->post();
 		$data = [
 			'url' => $formdata['url'],
-			'domain' => $formdata['domain'],
-			'segment' => $formdata['segment']
+			'domain' => $formdata['domain']??= base_url('link'),
+			'segment' => $formdata['segment']??=""
 		];
-		$string = $this->ShortURLModel->shorten($data);
-
-		$this->data['url'] = $string;
-
-		$this->load->view('bitly/home', $this->data);
 		/*
 		Save into Database
 		*/
+		$string = $this->ShortURLModel->shorten($data);
+		$data['segment'] = $string;
+		
+		$domain = "";
+		if($data['domain'] != ""){
+			$domain = trim($data['domain'], '/');
+		}
+		$string = $domain . '/' . $string;
+
+		if($this->ShortURLModel->insert($data)){
+			$this->data['url'] = $string;
+		}
+
+		$this->session->set_flashdata('short_data', $this->data);
+		redirect('app/thank-you');
 	}
 }

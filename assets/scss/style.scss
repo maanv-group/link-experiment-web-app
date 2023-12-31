@@ -1,3 +1,56 @@
+$color-pink: #cc79eb;
+$color-blue: #59b7ea;
+$color-yellow-1: #ffd400;
+$color-yellow-2: #ff9f00;
+$color-dark: #1c3d5c;
+$color-white: #fefefe;
+
+$buttons: (
+	'yellow-01' : $color-yellow-1,
+	'yellow-02' : $color-yellow-2
+);
+
+*{
+	font-family: 'Open Sans', sans-serif;
+}
+
+body{
+	background-color: $color-dark;
+	color: $color-white;
+}
+@each $class, $color in $buttons{
+	.btn-#{$class}{
+		background-color: $color;
+	}
+}
+
 section{
 	padding: max(10%, 2rem)  0;
+}
+.gradient-text-01{
+	background: linear-gradient(to right, $color-yellow-2, $color-yellow-1);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+
+}
+.page-title{
+	font-size: 1.5rem;
+	h1{
+		font-size: max(4vw, 2.5rem);
+		font-weight: 800;
+	}
+}
+.form-control-lg{
+	padding: 0.75 2rem;
+	font-size: 1.1rem;
+}
+
+nav.navbar{
+	.navbar-nav{
+		.nav-item{
+			.nav-link{
+				color: $color-white;
+			}
+		}
+	}
 }
