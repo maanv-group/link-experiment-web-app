@@ -7,7 +7,9 @@
 
 	<?php require_once APPPATH . "views/components/_common_css.php"  ?>
 
-	<title>Document</title>
+	<title>QRLFixr - A Revolutionaised way to represent your URLs.</title>
+	<meta name="title" content="QRLFixr - A Revolutionaised way to represent your URLs.">
+	<meta name="description" content="An all-in-one platform that's all you need for your SEO Friendly URL Generator and Analysis. URL Shortner and Analysis App will be presented in v1.1.0. QR Code Generator App is in development. Check Out Now!">
 </head>
 
 <body>
