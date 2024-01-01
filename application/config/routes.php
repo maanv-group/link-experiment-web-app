@@ -51,6 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'PagesController';
 $route['app'] = 'AppController/home';
+$route['link/(:any)'] = 'AppController/redirect/$1';
 $route['app/thank-you'] = 'AppController/thank_you';
 
 $route['api/form-process']['POST'] = 'AppController/process';

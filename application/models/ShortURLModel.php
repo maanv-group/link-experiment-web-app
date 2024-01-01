@@ -7,6 +7,8 @@ class ShortURLModel extends CI_Model
 		parent::__construct();
 	}
 
+	public $table = 'app_links_data';
+
 	public function shorten($data)
 	{
 		if ($data['segment'] == "") {
@@ -18,10 +20,17 @@ class ShortURLModel extends CI_Model
 	}
 
 	public function insert($data) : bool{
-		if($this->db->insert('app_links_data', $data)){
+		if($this->db->insert($this->table, $data)){
 			return true;
 		} else {
 			return false;
 		}
+	}
+
+	public function get($where = []){
+		if(count($where) > 0){
+			$this->db->where($where);
+		} 
+		return $this->db->get($this->table)->result_array();
 	}
 }

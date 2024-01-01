@@ -35,6 +35,17 @@ class AppController extends CI_Controller
 		$this->load->view('bitly/thank-you');
 	}
 	
+	public function redirect($slug)
+	{
+		$data = $this->ShortURLModel->get(['segment' => $slug])[0];
+		print_r($data);
+		redirect($data['url']);
+	}
+	public function analytics()
+	{
+		$this->load->view('bitly/thank-you');
+	}
+	
 
 	public function process()
 	{
