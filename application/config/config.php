@@ -24,6 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 $config['base_url'] = 'http://localhost/mini-projects/bitly-me/';
+$config['base_url'] = 'https://app.hemantkarekar.com/qrlfixr/';
 
 /*
 |--------------------------------------------------------------------------
