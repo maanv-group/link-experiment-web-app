@@ -47,7 +47,7 @@
 									<div class="mb-3">
 										<label for="exampleInputEmail1" class="form-label">Domain</label>
 										<div class="input-group">
-											<span class="input-group-text">L</span>
+											<span class="input-group-text"><i class="ti ti-link"></i></span>
 											<input type="text" disabled name="domain" value="<?= base_url('link') ?>" class="form-control form-control-lg" id="exampleInputEmail1" aria-describedby="emailHelp">
 										</div>
 									</div>
