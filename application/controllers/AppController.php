@@ -26,6 +26,11 @@ class AppController extends CI_Controller
 		parent::__construct();
 		$this->load->model('ShortURLModel');
 	}
+
+	public function index(){
+		redirect('app');
+	}
+
 	public function home()
 	{
 		$this->load->view('bitly/home');
